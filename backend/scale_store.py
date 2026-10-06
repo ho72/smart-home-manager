@@ -502,8 +502,8 @@ def create_device(username: str, body: dict[str, Any], home_id: str | None = Non
         "deviceToken": token,
         "name": name,
         "model": model,
-        "serverUrl": os.getenv("SCALE_SERVER_URL", "http://localhost:8080/scale/ingest"),
-        "liveServerUrl": os.getenv("SCALE_LIVE_SERVER_URL", "ws://localhost:8080/scale/live"),
+        "serverUrl": os.getenv("SCALE_SERVER_URL", "http://localhost:8080/ingest/scale"),
+        "liveServerUrl": os.getenv("SCALE_LIVE_SERVER_URL", "http://localhost:8080/ingest/scale/live"),
     }
 
 
