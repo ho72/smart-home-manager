@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>nook · Mobile</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1">
+<meta name="theme-color" content="#14100d">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #14100d;
+    color: #f4ece0;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'SF Pro Text', system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    min-height: 100%;
+    overscroll-behavior-y: contain;
+  }
+  body { min-height: 100vh; min-height: 100dvh; }
+  button { font-family: inherit; }
+
+  /* Scrollbar — thin, accent-agnostic */
+  ::-webkit-scrollbar { width: 6px; height: 6px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb { background: #2c241c; border-radius: 3px; }
+  ::-webkit-scrollbar-thumb:hover { background: #3a322a; }
+
+  @keyframes spin { to { transform: rotate(360deg); } }
+  @keyframes fanSpin { to { transform: rotate(360deg); } }
+  @keyframes overlayFade { from { opacity: 0; } to { opacity: 1; } }
+  @keyframes aodFadeIn { from { opacity: 0; } to { opacity: 1; } }
+  @keyframes pulseRing {
+    0%,100% { transform: translate(-50%, -50%) scale(1); opacity: 0.58; }
+    50%     { transform: translate(-50%, -50%) scale(1.14); opacity: 1; }
+  }
+  @keyframes dotBounce {
+    0%,100% { transform: translateY(0); opacity: 0.5; }
+    50%     { transform: translateY(-6px); opacity: 1; }
+  }
+  @keyframes barSlide {
+    0%   { left: -40%; }
+    100% { left: 100%; }
+  }
+
+  #root { min-height: 100vh; min-height: 100dvh; }
+</style>
+</head>
+<body>
+<div id="root"></div>
+
+<!-- React + Babel -->
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+
+<!-- Reuse ESP32 shared primitives (palette, icons, LoadingOverlay, useClock) -->
+<script type="text/babel" src="components/shared.jsx"></script>
+
+<!-- Mobile-specific -->
+<script type="text/babel" src="mobile/shared-mobile.jsx"></script>
+<script type="text/babel" src="mobile/reorderable.jsx"></script>
+<script type="text/babel" src="mobile/main-mobile.jsx"></script>
+<script type="text/babel" src="mobile/fan-mobile.jsx"></script>
+<script type="text/babel" src="mobile/light-mobile.jsx"></script>
+<script type="text/babel" src="mobile/settings-mobile.jsx"></script>
+<script type="text/babel" src="mobile/connections-mobile.jsx"></script>
+<script type="text/babel" src="mobile/automations-mobile.jsx"></script>
+<script type="text/babel" src="mobile/app-mobile.jsx"></script>
+</body>
+</html>

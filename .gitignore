@@ -1,0 +1,33 @@
+.env
+.env.*
+!.env.example
+node_modules/
+dist/
+build/
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+*.log
+*.pid
+.DS_Store
+.idea/
+.vscode/
+
+# Runtime state and credentials
+backend/accounts.json*
+backend/nook_roles.json*
+backend/smartthings_tokens.json*
+backend/vapid_keys.json*
+backend/state.json*
+backend/*.db*
+backend/*.sqlite*
+backend/*token*
+backend/*secret*
+
+# Generated caches and test artifacts
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+coverage/
+htmlcov/

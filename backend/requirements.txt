@@ -1,0 +1,8 @@
+fastapi
+uvicorn[standard]
+aiofiles
+python-dotenv
+requests
+python-miio
+cryptography
+pywebpush
